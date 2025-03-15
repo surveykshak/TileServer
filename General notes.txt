@@ -1,0 +1,25 @@
+WGS84/ World Mercator 	3395
+WGS84/ Pseudo Mercator 	3857
+
+http://192.168.10.7:8080/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities
+
+
+--tileserver---
+
+
+httpd.exe -k install -n "Apache HTTP Server"
+Edit D:\MyTileServer\apache\conf\extra\httpd-vhosts.conf as below
+
+
+<VirtualHost *:80> 
+ DocumentRoot D:\htdocs
+ ServerName admctile.com
+ <Directory d:\htdocs> 
+ AllowOverride All 
+ Allow from All 
+ </Directory>  
+</VirtualHost> 
+
+-------------------------------------------
+
+(aggregate(layer:='roads',aggregate:='sum',expression:="length",filter:="ref"='N-15'))/1000

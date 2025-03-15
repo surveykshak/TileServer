@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------------------
+CASE
+
+WHEN  "FONT" =6
+THEN  make_line(centroid($geometry),make_point($x+length("TEXT")*2400,$y))
+
+WHEN  "FONT" =9
+THEN  make_line(centroid($geometry),make_point($x+length("TEXT")*4700,$y))
+
+END
+-------------------------------------------------------------------------------------
+x (transform( $geometry, 'USER:100306', 'EPSG:4326' ))
+------------------------------------------------------------
+"Z_NAME"   + '\n' +to_string(round( "EASTING" )) +  '\n' + to_string(round( "NORTHING" ))+  '\n' + to_string("LONG" )+  '\n' + to_string("LAT" )
+-----------------------------------------
